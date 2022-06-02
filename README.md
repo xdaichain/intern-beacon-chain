@@ -1,6 +1,6 @@
-#In both cases, a private network of 3 nodes is built.
+# In both cases, a private network of 3 nodes is built.
 
-##GETH:
+## GETH:
 First of all, installing GETH is needed.
 
 ```sh
@@ -73,7 +73,7 @@ command
 
 
 
-##Deploying contract with GETH
+## Deploying contract with GETH
 We have a super simple smart-contract path/smart_contracts/[firstContract.sol](smart_contracts/firstContract.sol)
 
 Creating folder for compiled data.
@@ -142,10 +142,10 @@ collectingEthersInterface.at(addressOfContract).ethersIsInTheTrove.call()
 Impossibility of withdrawing ethers from the other account can be checked from another nodes.
 
 
-##Nethermind:
+## Nethermind:
 Everything was done according to the Manual Setup section from this article: https://docs.nethermind.io/nethermind/ethereum-client/private-networks/how-to-setup-a-nethermind-only-clique-based-chain
 
 
-##Snap Sync:
+## Snap Sync:
 According to this article: https://docs.nethermind.io/nethermind/ethereum-client/sync-modes#snap-sync
 "As of v1.13.0, Snap Sync on the Nethermind client can only download the Ethereum state but not serve it to other clients implementing Snap Sync. Since the only Ethereum client that supports serving Snap Sync requests is Geth, only networks supported by Geth can be synced: Mainnet, Goerli, Ropsten and Rinkeby. ..."
