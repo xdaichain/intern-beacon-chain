@@ -134,7 +134,7 @@ Withdrawing ethers
 collectingEthersInterface.at(addressOfContract).withdraw(1000000)
 ```
 
-Checking "Trove"'s balance
+Checking "Trove's" balance
 ```sh
 collectingEthersInterface.at(addressOfContract).ethersIsInTheTrove.call()
 ```
