@@ -31,14 +31,14 @@ https://github.com/NethermindEth/nethermind/blob/3d6a3a07035b6a86b7537f7ba07c1d3
 ## Article about MPT
 https://medium.com/@chiqing/merkle-patricia-trie-explained-ae3ac6a7e123
 
-## Needed:\
+## Needed:
 Find out what decoding means according to https://github.com/NethermindEth/nethermind/blob/a2c0d7f2a42224f6d052ed2097e9da443113fc59/src/Nethermind/Nethermind.Serialization.Rlp/RlpStream.cs#L685
 
 
 
 
 
-#Example of block
+## Example of block
 
 Some([253, 140, 58, 24, 18, 121, 168, 212, 6, 240, 51, 151, 237, 150, 130, 131, 192, 151, 224, 244, 186, 43, 203, 66, 63, 56, 88, 167, 138, 93, 52, 147])
 
