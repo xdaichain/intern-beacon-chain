@@ -41,3 +41,7 @@ eth.getStorageAt(contractAddress, 74565)
 The result will be "0x0000000000000000000000000000000000000000000000000000000000010101"
 
 Number 74565 is decimal for "0x0000000000000000000000000000000000000000000000000000000000012345" storage address.
+
+## Used links
+
+https://medium.com/coinmonks/a-practical-walkthrough-smart-contract-storage-d3383360ea1b
