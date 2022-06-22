@@ -5,3 +5,5 @@
 ## Rust code needed to read bytes from db and create hex strings is stored [here](https://github.com/gnosischain/intern-beacon-chain/blob/main/readingBytesInDB.rs)
 
 ## The ability of Geth to init contract storage through genesis file was checked [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/checkingGethAbilityToInitContractStateThroughGenesis.md)
+
+## Some info about MPT organization in Nethermind is stored [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/mptResearch.md)
