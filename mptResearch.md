@@ -14,12 +14,12 @@ https://github.com/NethermindEth/nethermind/blob/a2c0d7f2a42224f6d052ed2097e9da4
 Only one constructor has code. Has code for nodes commiting, working with root hash, nodes connecting(several cases with different node types are explained)
 
 ## Code for different data types storing
-[StateTree](https://github.com/NethermindEth/nethermind/blob/a2c0d7f2a42224f6d052ed2097e9da443113fc59/src/Nethermind/Nethermind.State/StateTree.cs)
-[ReceiptTrie](https://github.com/NethermindEth/nethermind/blob/aec476d0689416dc89e66f59e317b4d1bb2a3b7d/src/Nethermind/Nethermind.State/Proofs/ReceiptTrie.cs)
-[TxTrie](https://github.com/NethermindEth/nethermind/blob/aec476d0689416dc89e66f59e317b4d1bb2a3b7d/src/Nethermind/Nethermind.State/Proofs/TxTrie.cs)
-[StorageTree](https://github.com/NethermindEth/nethermind/blob/a2c0d7f2a42224f6d052ed2097e9da443113fc59/src/Nethermind/Nethermind.State/StorageTree.cs)
-[CanonicalHashTrie](https://github.com/NethermindEth/nethermind/blob/3d6a3a07035b6a86b7537f7ba07c1d315c29c148/src/Nethermind/Nethermind.Synchronization/LesSync/CanonicalHashTrie.cs)
-[PersistentReceiptStorage](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Blockchain/Receipts/PersistentReceiptStorage.cs)
+[StateTree](https://github.com/NethermindEth/nethermind/blob/a2c0d7f2a42224f6d052ed2097e9da443113fc59/src/Nethermind/Nethermind.State/StateTree.cs)\
+[ReceiptTrie](https://github.com/NethermindEth/nethermind/blob/aec476d0689416dc89e66f59e317b4d1bb2a3b7d/src/Nethermind/Nethermind.State/Proofs/ReceiptTrie.cs)\
+[TxTrie](https://github.com/NethermindEth/nethermind/blob/aec476d0689416dc89e66f59e317b4d1bb2a3b7d/src/Nethermind/Nethermind.State/Proofs/TxTrie.cs)\
+[StorageTree](https://github.com/NethermindEth/nethermind/blob/a2c0d7f2a42224f6d052ed2097e9da443113fc59/src/Nethermind/Nethermind.State/StorageTree.cs)\
+[CanonicalHashTrie](https://github.com/NethermindEth/nethermind/blob/3d6a3a07035b6a86b7537f7ba07c1d315c29c148/src/Nethermind/Nethermind.Synchronization/LesSync/CanonicalHashTrie.cs)\
+[PersistentReceiptStorage](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Nethermind.Blockchain/Receipts/PersistentReceiptStorage.cs)\
 
 ## Possible cases of trie construction are presented in the file [trieCases.txt](https://github.com/NethermindEth/nethermind/blob/a2c0d7f2a42224f6d052ed2097e9da443113fc59/src/Nethermind/Nethermind.Trie/trieCases.txt), stored in Nethermind.Trie github folder.
 
