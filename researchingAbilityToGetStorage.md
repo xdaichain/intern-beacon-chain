@@ -167,5 +167,15 @@ Provides storage operations.
 [File](https://github.com/NethermindEth/nethermind/blob/aec476d0689416dc89e66f59e317b4d1bb2a3b7d/src/Nethermind/Nethermind.State/StateProvider.cs)\
 Provides state operations. Contains several getter functions. GetStorageRoot(Address address) makes possible to get storage root for contract address.
 
+[File](https://github.com/NethermindEth/nethermind/blob/d1208bc336bad37c8ab3ff425428cedcd2e0894b/src/Nethermind/Nethermind.State/StateReader.cs)\
+Provides state reading. Contains several getter functions. GetStorage(Keccak storageRoot, in UInt256 index) makes possible to get data from storage cell with storage root and cell index.
+
 # To sum up
 To my mind, there is no way to get contract's state at the time of the certain block. Neither web3js console commands, nor Nethermind internal functions provide it. The only contract's storage data we can access is current state and inputs for every transaction to contract.
+
+# Some links
+https://programtheblockchain.com/posts/2018/03/09/understanding-ethereum-smart-contract-storage/
+
+Read GETH db:\
+https://n7ren.com/posts/2019-12-30---how-to-extract-ethereum-contract-state-and-storage-from-the-ethereum-database/extract-state-and-storage-for-contract-from-ethereum-database/ \
+https://github.com/medvedev1088/ethereum-merkle-patricia-trie-example
