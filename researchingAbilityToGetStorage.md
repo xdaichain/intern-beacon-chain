@@ -202,11 +202,11 @@ Nethermind functions make possible to get data from contract's storage, having i
 
 There are some classes used to present contracts and it's storage, even storage cells, in Nethermind, but they don't have calls to any db writing functions. Working with db is made through transactions processing, as I have understood. So, current idea is to research, how transactions processing works in Nethermind and how to get db structure with this information.
 
-We have some classes:
+We have some classes:\
 [Transaction](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/Transaction.cs)\
 [TransactionExtensions](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/TransactionExtensions.cs)\
 [TransactionReceipt](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/TransactionReceipt.cs)\
-[TxType](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/TxType.cs)\
+[TxType](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/TxType.cs)
 
 None of them provide any processing functions.
 
