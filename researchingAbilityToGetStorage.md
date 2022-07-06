@@ -170,11 +170,51 @@ Provides state operations. Contains several getter functions. GetStorageRoot(Add
 [File](https://github.com/NethermindEth/nethermind/blob/d1208bc336bad37c8ab3ff425428cedcd2e0894b/src/Nethermind/Nethermind.State/StateReader.cs)\
 Provides state reading. Contains several getter functions. GetStorage(Keccak storageRoot, in UInt256 index) makes possible to get data from storage cell with storage root and cell index.
 
-# To sum up
-To my mind, there is no way to get contract's state at the time of the certain block. Neither web3js console commands, nor Nethermind internal functions provide it. The only contract's storage data we can access is current state and inputs for every transaction to contract.
+# Update on getting storage cell at the time of certain block with web3js
+I was wrong about inability of getting historical storage data.\
+It is possible to get historical storage data if the node is in archive mode.
+Command : 
+```sh
+eth.getStorageAt(addressOfContract, position, blockNumber)
+```
+
+# Retrieving data from storage root
+There was an idea to retrieve the whole contract's storage tree having only it's root. It is not possible, root is constructed from hashes of it's sons. Root's sons are constructed from hashes of it's sons and so on. Storage root only shows the current state of contract's storage.
+
+# Researching Nethermind code
+
+[Get(in UInt256 index, Keccak? storageRoot = null)](https://github.com/NethermindEth/nethermind/blob/d1208bc336bad37c8ab3ff425428cedcd2e0894b/src/Nethermind/Nethermind.State/StorageTree.cs#L30)
+
+[GetStorage(Keccak storageRoot, in UInt256 index)](https://github.com/NethermindEth/nethermind/blob/d1208bc336bad37c8ab3ff425428cedcd2e0894b/src/Nethermind/Nethermind.State/StateReader.cs)
+
+In both functions storageRoot is hash.
+
+[GetThroughCache(address)](https://github.com/NethermindEth/nethermind/blob/aec476d0689416dc89e66f59e317b4d1bb2a3b7d/src/Nethermind/Nethermind.State/StateProvider.cs#L137)\
+Can't find the realization of this function, only one call in the whole project.
+
+[Get(key, storageRoot)](https://github.com/NethermindEth/nethermind/blob/d1208bc336bad37c8ab3ff425428cedcd2e0894b/src/Nethermind/Nethermind.State/StorageTree.cs#L78)\
+The same, can't find the realization
+
+[SetInternal(key, value)](https://github.com/NethermindEth/nethermind/blob/d1208bc336bad37c8ab3ff425428cedcd2e0894b/src/Nethermind/Nethermind.State/StorageTree.cs#L91)\
+The same, can't find the realization
+
+Nethermind functions make possible to get data from contract's storage, having it's root and position number, but not the whole storage. So, the only way to get full contract's storage from Nethermind is to understand the idea of MPT realization in Nethermind and it's database realization.
+
+There are some classes used to present contracts and it's storage, even storage cells, in Nethermind, but they don't have calls to any db writing functions. Working with db is made through transactions processing, as I have understood. So, current idea is to research, how transactions processing works in Nethermind and how to get db structure with this information.
+
+We have some classes:
+[Transaction](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/Transaction.cs)\
+[TransactionExtensions](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/TransactionExtensions.cs)\
+[TransactionReceipt](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/TransactionReceipt.cs)\
+[TxType](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/TxType.cs)\
+
+None of them provide any processing functions.
+
+[Keccak class](https://github.com/NethermindEth/nethermind/blob/9dd85c38ec9033c70ef80c289a96655b9d8b8827/src/Nethermind/Nethermind.Core/Crypto/Keccak.cs)
 
 # Some links
 https://programtheblockchain.com/posts/2018/03/09/understanding-ethereum-smart-contract-storage/
+https://medium.com/@chiqing/merkle-patricia-trie-explained-ae3ac6a7e123
 
 Read GETH db:\
 https://n7ren.com/posts/2019-12-30---how-to-extract-ethereum-contract-state-and-storage-from-the-ethereum-database/extract-state-and-storage-for-contract-from-ethereum-database/ \
