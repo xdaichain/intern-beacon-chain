@@ -7,4 +7,7 @@
 ## The ability of Geth to init contract storage through genesis file was checked [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/checkingGethAbilityToInitContractStateThroughGenesis.md)
 
 ## Some info about MPT organization in Nethermind is stored [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/mptResearch.md)
+
 ## Researching the ability to get storage of contract's state at the time of the certain block [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/researchingAbilityToGetStorage.md)
+
+## Some comments on code creating are stored [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/codeComments.md)
