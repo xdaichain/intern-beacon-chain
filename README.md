@@ -11,3 +11,5 @@
 ## Researching the ability to get storage of contract's state at the time of the certain block [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/researchingAbilityToGetStorage.md)
 
 ## Some comments on code creating are stored [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/codeComments.md)
+
+## Some info about TreeDump and KV-pairs in the tree is stored [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/gettingTreeDump.md)
