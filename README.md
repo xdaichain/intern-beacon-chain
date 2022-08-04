@@ -15,3 +15,5 @@
 ## Some info about TreeDump and KV-pairs in the tree is stored [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/gettingTreeDump.md)
 
 ## Researching ability to internally migrate Nethermind's db to Geth's db is described [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/migrationDbFromNethermindToGeth.md)
+
+## Implementing BlockReward in Geth [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/BlockRewardInGeth.md)
