@@ -38,6 +38,9 @@ https://github.com/openethereum/openethereum/blob/d8305c52ea805e62d7532c3ac76386
 The way contract abi is stored in OpenEthereum\
 https://github.com/openethereum/openethereum/blob/d8305c52ea805e62d7532c3ac76386873984d326/crates/ethcore/res/contracts/block_reward.json
 
+Geth accumulateRewards function, which should be changed\
+https://github.com/ethereum/go-ethereum/blob/e44d6551c3c872584722c366c863381f7e91df91/consensus/ethash/consensus.go#L652
+
 The steps to make Geth work with BlockReward contract:
 1. Provide BlockReward contract definition to Geth code
 2. Add BlockReward.reward execution step in the end of every block production
