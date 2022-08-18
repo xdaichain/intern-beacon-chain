@@ -46,3 +46,8 @@ The steps to make Geth work with BlockReward contract:
 2. Add BlockReward.reward execution step in the end of every block production
 3. Run tests to check the results
 
+
+# Quick update
+Adding some new stuff to GETH code [here](https://github.com/alien111/go-ethereum).
+
+BlockReward contract class added, made it similar to checkpointoracle class. Have some problems with getting the output of the transaction(non-constant call), needed to get the result of reward function. 
