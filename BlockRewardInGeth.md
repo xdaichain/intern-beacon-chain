@@ -50,4 +50,11 @@ The steps to make Geth work with BlockReward contract:
 # Quick update
 Adding some new stuff to GETH code [here](https://github.com/alien111/go-ethereum).
 
-BlockReward contract class added, made it similar to checkpointoracle class. Have some problems with getting the output of the transaction(non-constant call), needed to get the result of reward function. 
+BlockReward contract class added, made it similar to checkpointoracle class. Have some problems with getting the output of the transaction(non-constant call), needed to get the result of reward function.
+
+BlockReward class files: https://github.com/alien111/go-ethereum/tree/master/contracts/BlockReward/contract_
+
+Currently the problem is to get the result of the BlockReward.reward transaction once it's mined into the blockchain. After solving it, all we have to do is just add contract calling to [the clique consensus file](https://github.com/alien111/go-ethereum/blob/master/consensus/clique/clique.go) and test the right reward distribution.
+
+There is only one contract in GETH. It's [checkpointoracle](https://github.com/alien111/go-ethereum/tree/master/contracts/checkpointoracle). It has several view functions, they use just constant calls. And one non-constant function, but it returns only one bool variable, which is never retrieved in the code of GETH. Researching the code, I haven't found any functions, that could help to solve the problem so far. 
+
