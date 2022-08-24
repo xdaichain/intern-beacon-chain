@@ -58,3 +58,7 @@ Currently the problem is to get the result of the BlockReward.reward transaction
 
 There is only one contract in GETH. It's [checkpointoracle](https://github.com/alien111/go-ethereum/tree/master/contracts/checkpointoracle). It has several view functions, they use just constant calls. And one non-constant function, but it returns only one bool variable, which is never retrieved in the code of GETH. Researching the code, I haven't found any functions, that could help to solve the problem so far. 
 
+# Quick update 2 
+
+Checked, what is done in [this commit](https://github.com/poanetwork/quorum/commit/0e922bd8412b2c2019624c82a2b129f5f580d8c2).
+It didn't work, no input parameters have been passed to the contract, just empty arrays. After fixing the code to be logically similar to OpenEthereum one, I tried to test it on a testnet of 2 nodes with 1 sealer-node. The contract's storage hash remains the same when the blocks keep sealing. Looking deeper, we can see, that the additional evm is created in the code and only the balances can be updated in this case. Now I'm struggling to fix it by copying the additional evm's state to the main one.
