@@ -72,3 +72,20 @@ So, it really does. The state is changing, the rewards are distributed properly.
 The latest commit to our version of GETH is stored [here](https://github.com/alien111/go-ethereum/commit/f8731114a2f9c1bfed4dc367b1221af71d31bf0c). Currently, extra receivers are added just before calling reward function to be able to test the code.
 
 To test the BlockReward contarct it's needed to initialize a chain, deploy the contract and hardcode the contarct's address to the GETH code.
+
+# Final update
+
+addExtraReceiver call removed from code. Contract's address is now added through the config file.
+
+The task was to make BlockReward work with Clique engine, so now contract should be passed tp config like
+```sh
+...
+"clique": {
+      "period": 5,
+      "epoch": 30000,
+      "blockReward": "0x649dd44aca6b4db506507fd4c32fc4173bae2ce1"
+    }
+...
+```
+
+The final commit: https://github.com/alien111/go-ethereum/commit/c00619780dabad8c85c8fa19c6bfbfae40cdc16c
