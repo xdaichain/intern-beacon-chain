@@ -70,3 +70,5 @@ The version of BlockReward contract with dummyCounter is stored [here](https://g
 So, it really does. The state is changing, the rewards are distributed properly.
 
 The latest commit to our version of GETH is stored [here](https://github.com/alien111/go-ethereum/commit/f8731114a2f9c1bfed4dc367b1221af71d31bf0c). Currently, extra receivers are added just before calling reward function to be able to test the code.
+
+To test the BlockReward contarct it's needed to initialize a chain, deploy the contract and hardcode the contarct's address to the GETH code.
