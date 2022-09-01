@@ -62,3 +62,11 @@ There is only one contract in GETH. It's [checkpointoracle](https://github.com/a
 
 Checked, what is done in [this commit](https://github.com/poanetwork/quorum/commit/0e922bd8412b2c2019624c82a2b129f5f580d8c2).
 It didn't work, no input parameters have been passed to the contract, just empty arrays. After fixing the code to be logically similar to OpenEthereum one, I tried to test it on a testnet of 2 nodes with 1 sealer-node. The contract's storage hash remains the same when the blocks keep sealing. Looking deeper, we can see, that the additional evm is created in the code and only the balances can be updated in this case. Now I'm struggling to fix it by copying the additional evm's state to the main one.
+
+# Quick update 3
+
+The version of BlockReward contract with dummyCounter is stored [here](https://github.com/xdaichain/intern-beacon-chain/blob/main/smart_contracts/BlockReward.sol). dummyCounter is needed to check if the state is changing in the end of every block processing.
+
+So, it really does. The state is changing, the rewards are distributed properly.
+
+The latest commit to our version of GETH is stored [here](https://github.com/alien111/go-ethereum/commit/f8731114a2f9c1bfed4dc367b1221af71d31bf0c). Currently, extra receivers are added just before calling reward function to be able to test the code.
